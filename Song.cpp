@@ -10,6 +10,13 @@ Song::Song(string artist, string title, int size) {
 
 }
 
+void Song::swap(Song &p) {
+
+    Song temp = p;
+    p = *this;
+    *this = temp;
+}
+
 void Song::setArtist(string new_Artist) {
     artist = new_Artist;
 }
@@ -45,3 +52,21 @@ bool Song::operator==(Song const &s2) {
         return true;
     }
 }
+
+bool Song::operator<(Song const &s2) {
+    if(artist < s2.artist && title < s2.title && ){
+        return true;
+    }else{
+        return false;
+    }
+    if(title < s2.title){
+        return
+    }
+}
+
+bool Song::operator>(Song const &s2) {
+
+}
+
+//Song::~Song() {
+//}

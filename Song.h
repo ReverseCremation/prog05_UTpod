@@ -2,6 +2,7 @@
 #define SONG_H
 #include <iostream>
 #include <iomanip>
+#include <utility>
 #include <string>
 
 using namespace std;
@@ -31,7 +32,13 @@ class Song{
 
         int getSize() const;
 
+        void swap(Song &p);
+
         bool operator==(Song const &s2);
+        bool operator<(Song const &s2);
+        bool operator
+
+//        ~Song();
 };
 
 #endif

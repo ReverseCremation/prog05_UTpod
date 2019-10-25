@@ -3,8 +3,8 @@
 #ifndef UTPOD_H
 #define UTPOD_H
 #include "Song.h"
-#include <iostream>
-#include <iomanip>
+//#include <iostream>
+//#include <iomanip>
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
@@ -19,7 +19,7 @@ class UtPod
       static const int NO_MEMORY = -1;
       static const int NOT_FOUND = -2;
       
-      struct SongNode
+      typedef struct SongNode
       {
          Song s;
          SongNode *next;
@@ -28,11 +28,12 @@ class UtPod
             s = Song();
             next = NULL;
          }
-      };
+      }SongNode;
       
       SongNode *songs;  //the head pointer
       
       int memSize;
+      int numSongs;
 
       int getNumSongs();
    

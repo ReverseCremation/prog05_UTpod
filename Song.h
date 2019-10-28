@@ -1,44 +1,38 @@
-#ifndef SONG_H
-#define SONG_H
-#include <iostream>
-#include <iomanip>
-#include <utility>
-#include <string>
+//
+// Created by justi on 10/20/2019.
+//
 
+#ifndef PROG5_SONG_H
+#define PROG5_SONG_H
+#include <string>
+#include <utility>
 using namespace std;
 
-class Song{
-
+class Song {
     private:
-
         string title;
         string artist;
-        int    size;
+        int size;
 
     public:
         Song();
+        Song(string artist, string title, int size);
 
-        Song(string title, string artist, int size);
-
-        void setTitle(string new_Title);
-
-        void setArtist(string new_Artist);
-
-        void setSize(int new_Size);
-
-        string getTitle() const;
-
-        string getArtist() const;
-
-        int getSize() const;
+        string getTitle() const
+        {   return title;   }
+        string getArtist() const
+        {   return artist;  }
+        int getSize() const
+        {   return size;    }
 
         void swap(Song &p);
 
-        bool operator==(Song const &s2);
-        bool operator<(Song const &s2);
-        bool operator
+        bool operator  >(Song const &rhs);
+        bool operator  <(Song const &rhs);
+        bool operator ==(Song const &rhs);
 
-//        ~Song();
 };
 
-#endif
+ostream& operator << (ostream& out, const Song &s);
+
+#endif //PROG5_SONG_H

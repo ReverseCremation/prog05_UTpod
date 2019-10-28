@@ -1,3 +1,6 @@
+//
+// Created by justi on 10/20/2019.
+//
 /* utPod_driver.cpp
 Demo Driver for the UtPod.
 
@@ -19,79 +22,31 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     UtPod t;
-    
-    Song s1("Beatles", "Hey Jude1", 4);
-    int result = t.addSong(s1);
-    cout << "result = " << result << endl;
-    
+
+    Song s1("Bartist", "Asong", 3);
+    int result = t.addSong(s1);//cout << "result = " << result << endl;
+    Song s2("Bartist", "Bsong", 4);
+    t.addSong(s2);
+    Song s3("Aartist", "Bsong", 2);
+    t.addSong(s3);
+    Song s4("Aartist", "Asong", 1);
+    t.addSong(s4);
+    Song s5("Cartist", "Csong", 5);
+    t.addSong(s5);
+    Song s6("Cartist", "Csong", 6);
+    t.addSong(s6);
+
+    printf("----------------\n");
     t.showSongList();
-
-    Song s2("Beatles", "Hey Jude2", 5);
-    result = t.addSong(s2);
-    cout << "result = " << result << endl;
-
-    t.showSongList();
-
-    Song s3("Beatles", "Hey Jude3", 6);
-    result = t.addSong(s3);
-    cout << "result = " << result << endl;
-
-    Song s4("Beatles", "Hey Jude4", 7);
-    result = t.addSong(s4);
-    cout << "result = " << result << endl;
-
-    Song s5("Beatles", "Hey Jude5", 241);
-    result = t.addSong(s5);
-    cout << "add result = " << result << endl;
-
-    Song s6("The Misfits", "Last Caress", 5);
-    result = t.addSong(s6);
-    cout << "add result = " << result << endl;
-
-    Song s7("The Replacements", "Androgynous", 2);
-    result = t.addSong(s7);
-    cout << "add result = " << result << endl;
-
-    Song s8("Vashti Bunyan", "Train Song", 19);
-    result = t.addSong(s8);
-    cout << "add result = " << result << endl;
-
-    Song s9("Glinksadg", "fjfjfjf", 5);
-    result = t.addSong(s9);
-    cout << "add result = " << result << endl;
-
-    cout<<"list before shuffling:\n";
-    t.showSongList();
-
     t.shuffle();
-    cout<<"\n list after shuffling:\n";
+    printf("----------------\n");
     t.showSongList();
-
-    result = t.removeSong(s2);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s3);
-    cout << "delete result = " << result << endl;
-
+    t.sortSongList();
+    printf("----------------\n");
     t.showSongList();
-
-    result = t.removeSong(s1);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s5);
-    cout << "delete result = " << result << endl;
-
-    result = t.removeSong(s4);
-    cout << "delete result = " << result << endl;
-
-
+    t.shuffle();
+    printf("----------------\n");
     t.showSongList();
-
-    result = t.addSong(s5);
-    cout << "add result = " << result << endl;
-
-    t.showSongList();
-    cout << "memory = " << t.getRemainingMemory() << endl;
-
+    t.sortSongList();
 
 }
